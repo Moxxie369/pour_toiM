@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Flores Amarillas para ti! 💛</title>
+    <style>
+        body {
+            background-color: #f7e6a0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #4a4a4a;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+        }
+        h1 {
+            color: #d4a700;
+        }
+        .flower-image {
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="musica-regalo" loop>
+    <source src="golden.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+
+<div class="container" onclick="reproducirMusica()">
+    <h1>¡Un regalo para ti!</h1>
+    <p class="message">
+        ¡Haz clic en cualquier parte!, tu solo confia en mi xd
+    </p>
+    <img src="flor.png" alt="Un ramo" class="flower-image">
+    <p class="message">
+        Con mucho cariño, <br>
+        pd: Deberia de estar estudiando y me puse a hacer esto.
+    </p>
+</div>
+
+<footer>
+    ¡Espero que te guste!
+</footer>
+
+<script>
+    function reproducirMusica() {
+        const audio = document.getElementById('musica-regalo');
+        audio.play().catch(error => {
+            console.log('La reproducción automática fue bloqueada por el navegador.');
+        });
+        // Opcional: una vez que la música se reproduce, elimina el evento de clic para que no se reproduzca de nuevo
+        document.querySelector('.container').onclick = null;
+    }
+</script>
+
+</body>
+</html>
